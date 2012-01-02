@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Hello App Engine</title>
+  </head>
+
+  <body>
+    <h1>Manage info</h1>
+	<form action="infodatabaseupdate" method="get" name="addinfo">
+	<input name="q" type="hidden" value="add" />
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="Name" />
+    <br />
+    <label for="Longitude">Description:</label>
+    <input type="text" name="desc" id="Longitude" />
+    <br />
+    <label for="url">Type:</label>
+    <input type="text" name="type" id="url" />
+    <br />
+    <label for="keywords">Payload: </label>
+    <input type="text" name="payload" id="Keywords" />
+    <br />
+    <input type="submit" name="submit" id="Submit" value="Submit" />
+	<input name="reset" id="Reset" value="Reset" type="reset" />
+  </p>
+</form>
+  </body>
+</html>

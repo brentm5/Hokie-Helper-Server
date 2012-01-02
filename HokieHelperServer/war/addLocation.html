@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Hello App Engine</title>
+  </head>
+
+  <body>
+    <h1>Manage locations</h1>
+	<form action="managelocations?q=addlocation" method="get" name="addlocation">
+	<input name="q" type="hidden" value="addlocation" />
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="Name" />
+    <br />
+    <label for="Latitude">Latitude:</label>
+    <input type="text" name="lat" id="Latitude" />
+    <br />
+    <label for="Longitude">Longitude:</label>
+    <input type="text" name="long" id="Longitude" />
+    <br />
+    <label for="url">URL:</label>
+    <input type="text" name="url" id="url" />
+    <br />
+    <label for="keywords">Keywords: </label>
+    <input type="text" name="keywords" id="Keywords" />
+    <br />
+    <input type="submit" name="submit" id="Submit" value="Submit" />
+	<input name="reset" id="Reset" value="Reset" type="reset" />
+  </p>
+</form>
+	<a href="managelocations?q=deleteall">Delete All Entries</a>
+  </body>
+</html>
