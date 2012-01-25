@@ -23,6 +23,8 @@ import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
 
 /**
  * BuildingsUpdateServlet goes to the vt buildings page and goes one by one to each
@@ -70,6 +72,9 @@ public class BuildingsUpdateServlet extends HttpServlet {
 		int total = 0;
 		int coordsFound = 0;
 		int abbrFound = 0;
+		resp.getWriter().println("Deleteing All the Location Entries");
+		deleteAll();
+		
 		for(Element building : doc.getElementsByClass("vt_list_DateAfter")) {
 			total++;
 			String link = building.getElementsByTag("a").first().attr("href");
@@ -143,6 +148,22 @@ public class BuildingsUpdateServlet extends HttpServlet {
 			}
 		}
 		
+		
+	}
+	
+	private boolean deleteAll(){
+		try {
+        	Query q = new Query("Location");
+        	PreparedQuery pq = datastore_.prepare(q);
+        	for (Entity result : pq.asIterable()) {
+        		datastore_.delete(result.getKey());
+        	}
+        	return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 		
 	}
 }
